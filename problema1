@@ -1,0 +1,29 @@
+Encontrar o somatório de todos os valores inferiores a 1000 que são múltiplos de 3 ou de 5.
+
+início=0
+fim=1000
+
+def problema1 ():
+
+    somatorio=0
+
+    for i in range (inicio, fim):
+        if (i%3==0) or (i%5==0):
+            somatorio=somatorio+i
+
+    print (somatorio)
+
+
+Neste problema comecei por definir o intervalo de todos os valores que são inferiores a 1000. Como o que queremos
+é um somatório de todos os valores que são múltiplos de 3 ou 5, antes mesmo de verificar quais são, ou não, múltiplos
+de 3 ou 5 criei uma variável chamada "somatório" onde vou apresentar o valor pedido.
+
+O código propriamente dito começa com um ciclo "for" pois só queremos saber os múltiplos que são menores que 1000. Quando
+chegarmos a 1000 e ciclo termina. Dentro do ciclo vamos saber, através de uma condição "if" se os valores "i" (cada valor 
+de 1 a 1000) é ou não múltiplo de 3 ou 5. Se for então o valor encontrado será adicionado ao somatório. Quando o i=1000 o
+ciclo termina e no somatório estará o valor pedido no problema.
+
+NOTA: Na condição "if" usamos "or" porque nos pedem os múltiplos de 3 "OU" de 5. Se fosse de 3 "E" de 5 então usaríamos,
+no lugar de "or" um "and".
+
+Solução: 233168
