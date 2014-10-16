@@ -1,0 +1,43 @@
+Qual é o maior fator primo do número 600851475143?
+
+
+def problema3():
+
+     n = 600851475143
+     i = 2
+
+     while i * i < n:
+          if n % i == 0:
+               n = n / i
+          i = i + 1
+          
+     print (n)
+
+
+
+Para este problema vamos começar com uma constante, n, que é o tal valor do qual queremos saber o maior fator primo
+e i. Este i vai percorrer todos os valores de 2 até i². Começamos por 2 pois não faria sentido começar em 1, já que todos 
+os valores são divisíveis por 1.
+
+Continuando, o ciclo while vai correr enquanto o valor i² é menor que o n. Isto deve-se à definição de numero primo. Sabemos
+que o valor primo apenas o é por ser divísivel somente por 1 e por ele próprio (ser divisível=resto da divisão ser 0).
+Ora, a partir do momento em que i² NÃO É menor que n significa que i>n/2 e então a divisão nunca dará resto 0.
+
+Dentro do primeiro ciclo while temos uma condição que verifica se o resto da divisão de n por i é 0. Se for, então o novo 
+valor de n será n/i. Esta foi a parte mais dificil do problema, mas exemplificando com valores mais curtos podemos explicar
+o procedido mais facilmente:
+
+    Pegando no número 24, temos os fatores 2, 3, 4, 6, 8 e 12.
+    A raiz quadrada de 24 é qualquer coisa como 4.8 então vamos verificar a divisão para todos os valores inteiros até 4
+    e inclusivé).
+
+    Ora, isto dá-nos três fatores: 2, 3 e 4. O resto é obtido da seguinte forma:
+
+      24/2 = 12
+      24/3 = 8
+      24/4 = 6
+
+Continuando, o nosso valor i vai sendo incrementado até que i²<n. Por fim, e quando já temos em n=n/i o maior fator de n
+o resultado é impresso e o nosso problema está resolvido.
+
+Solução: 6857.0
