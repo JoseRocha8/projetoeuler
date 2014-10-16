@@ -1,0 +1,36 @@
+Um número palíndromo é um número que tem o mesmo valor quer seja lido da direita para a esquerda ou da esquerda para
+a direita. Pretendemos encontrar o maior número palíndromo resultante do produto de dois números de 3 algarismos cada.
+
+
+def problema4():
+
+    n=0
+
+    for a in range (999, 100, -1):
+        for b in range (a, 100, -1):
+            x=(a*b)
+            if (x>n):
+                valor=str(a*b)
+                if (valor==valor[::-1]):
+                    n=(a*b)
+
+    print (n)
+
+
+Neste problema vamos obter o nosso resultado final na nariável n que, para já, fica a 0.
+
+A resolução começa com um ciclo for. Este for é do tipo "for[start, end, step]". O start é 999 pois, como queremos o maior
+produto de dois números de três dígitos, vamos começar a ver pelos valores de 3 dígitos mais altos. É por isso que o end é
+100. Já o step é também uma influência dessa contagem decrescente; como é do maior para o menor, vamos decrementar.
+Este ciclo serve para encontrar um dos valores a multiplicar, ao qual chamamos "a".
+
+Seguidamente temos um ciclo b. A ideia é funcionar do mesmo modo que, mas, aqui, o maior valor, o tal "start", será
+o "a" obtido no ciclo anterior.
+
+Encontrados a e b termos uma instrução aritmética que guarda em "x" o produto de "a" por "b". Na instrução seguinte 
+vamos ver se esse x é maior que n. Se for, o produto de "a" por "b", "x" será transformado em string. Aí, vamos ver se o 
+valor que temos é ou não um palíndromo. Se for, o valor será guardado em "n".
+
+No final esse "n" é impresso e obtemos o nossotão querido palíndromo.
+
+Solução: 906609
