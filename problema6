@@ -1,0 +1,16 @@
+Encontrar a diferença entre o somatório dos quadrados dos 100 primeiros números reais e o quadrado do seu somatório.
+
+def problema6 ():
+
+    array = range(1, 101)
+    somatorio = sum(array)
+
+    print ((somatorio * somatorio) - (sum(i*i for i in array)))
+
+
+Este problema é do mais intuitivo possível.
+
+Queremos encontrar encontrar a diferença entre a soma dos quadrados e o quadrado da soma no que ais 100
+primeiros números reais diz respeito.
+
+A soma dos quadrado é dada por (sum(i*i for i in array)) e o quadrado da soma é dado por (somatorio*somatorio).
