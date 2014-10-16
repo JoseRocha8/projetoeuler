@@ -1,0 +1,53 @@
+Qual é o 10001º número primo?
+
+def numero_primo(n):
+
+    if n <= 1:
+        return 0
+    elif n == 2:
+        return "primo"
+
+    if n % 2 == 0:
+        return 0
+    else:
+        d = 3
+        while d * d <= n:
+            if n % d == 0:
+                return 0
+            d += 2
+        return "primo"
+
+decisao = "primo"
+valoratual = 0
+contador = 0
+
+while decisao:
+    if numero_primo(valoratual):
+        contador += 1
+        if contador == 10001:
+            break
+    valoratual+=1
+    
+print (valoratual)
+
+
+O problema 7 implica um raciocínio muito complexo contudo o código não foi muito fácil de conseguir e precisei de consultar
+alguns dos meus colegas. 
+
+A ideia do código passa por, inicialmente, apresentar um método para o que são, ou não, números primos. Aqui há duas grandes 
+excepções, para n=1 e para n=2. Quer um quer outro são apenas divísiveis por 1 e por ele próprio. Depois excluímos todos os
+números pares: à excepção do 2 nenhum deles é par.
+
+Seguidamente vamos à parte do código que mais tempo leva a executar. Iniciamos a variável "d" a 3, pois já vimos que 1 e 2 são
+números pares. A seguir corremos um ciclo "while" enquanto d²<=n (ver exercício 3). Se o resto da divisão de "n" por "d"
+for 0 então o número não é primo. Incrementamos d sempre de 2 a 2 pois, como vimos anteriormente, só os valores ímpares
+poderão ser números primos. Como quando não é cão é cadela, sempre que o número é "não-primo" será "primo".
+
+Na segunda parte do código temos a "decisao" baseada na divisão que fizémos dos números primos ou não-primos.
+Como estamos interessados nos primos igualamos "decisao= "primo"". Iniciamos ainda duas variáveis, uma que guarda cada valor
+primo encontrado (e o guarda sobre o anterior) e um contador para sabermos quando temos o tal 100001º elemento.
+
+Com um ciclo while encontramos os números primos e, ao chegarmos ao 10001º elemento, o ciclo pára. Aí o valor primo atual,
+o 100001º, é impresso.
+
+Solução: 104743
