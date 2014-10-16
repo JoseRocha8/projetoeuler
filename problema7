@@ -1,6 +1,6 @@
 Qual é o 10001º número primo?
 
-def numero_primo(n):
+def problema7(n):
 
     if n <= 1:
         return 0
