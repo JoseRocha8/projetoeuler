@@ -1,0 +1,33 @@
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+Encontrar o somatório dos números pares da sequência Fibonacci cujos valores não excedem os 4000000. 
+
+
+def problema2():
+
+    somatorio = 0
+    fib1 = 0
+    fib2 = 1
+
+    while (fib2<=4000000):
+        if (fib2%2==0):
+            somatorio+=fib2
+        
+        fib1, fib2 = fib2, fib1+fib2
+
+    print (somatorio)
+
+
+Para este exercício vamos precisar de 3 variáveis. Como a sequência Fibonacci funciona à base do valor anterior e do valor
+atual vamos ter as variáveis fib1 e fib para o valor anterior e atual respetivamente. Como nos é pedido um valor para o 
+somatorio teremos outra variável, chamada "somatorio" que dará a solução do problema.
+
+Fib1 começa com o valor 0 e Fib2 com o valor 1. O nosso código de cálculo do somatório irá correr enquanto fib2 for menor 
+que 4 milhões(4000000) pois são só os valores inferiores a esse que nos interessam.
+
+Para encontarr os números pares basta ter fib2%2, que é o valor "atual" e onde "%" é o operador que nos permite saber se o
+resto da divisão por "2" é mesmo 0. Se a condicional se confirmar então a variável somatório será implementada com o valor 
+"atual". Isto vai acontecer enquanto o tal valor atual não for 4000001. Aí o ciclo termina e o resultado está pronto a ser
+impresso com a instrução "print(somatorio)".
+
+Solução: 4613732
