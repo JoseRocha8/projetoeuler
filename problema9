@@ -1,0 +1,23 @@
+#Apenas existe um Pitagoreano em que a + b + c = 1000.
+#Com a^2 + b^2 = c^2 determine o produto abc
+
+
+def problema9 ():
+
+    for a in range (1, 1000):
+        for b in range (a, 1000):
+            c = 1000 - a - b
+            if c > 0:
+                if c*c == a*a + b*b:
+                    print (a*b*c)
+                    break
+
+"""Sabendo que (a^2 + b^2 = c^2) e que (a + b + c = 1000) sabemos que (c = 1000 - a - b) e isto ser-nos-à útil mais adiante.
+
+Comecemos por determinar a num ciclo em que o range vai de 1 a 1000 (a nunca poderá estar fora deste intervalo). Encontrado o valor de "A"
+faremos algo parecido para "B", mas desta vez o range vai de a a 1000. "B" é superior a "A" já que encontramos primeiro "A" e só depois "B".
+Sabendo que (c = 1000 - a - b) asseguremo-nos que (c > 0). Posto isto, vamos garantir que "A", "B" e "C" constituem um pitaoreano.
+
+Garantida essa claúsula através da aplicação de um concicional, imprimamos o resultado.
+
+Solução: 31875000"""
