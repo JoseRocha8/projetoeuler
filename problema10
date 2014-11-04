@@ -1,0 +1,39 @@
+#The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+#Find the sum of all the primes below two million.
+
+import math
+
+def problema10 ():
+
+    somatório = 2
+    
+    for i in range(3, 2000000):
+
+        primo=True 
+
+        if i%2 != 0:
+
+            for j in range(3, int(round(math.sqrt(i)+1)),2):
+                if i % j==0:
+                    primo=False
+                    
+        else:
+            primo=False
+
+        if primo==True:
+            somatório+=i
+            
+    print (somatório)
+
+
+
+"""Começamos por iniciar o somatório em 2, já que é o valor do primeiro dos números primos. Começando aí, o primeiro valor do range será 3 e o último 2M.
+
+Sempre que um valor não for par, iniciamos o ciclo for. Caso seja par assumimos logo que não será primo. Se o resto da divisão por 2 for diferente de 0
+fazemos um novo ciclo for em que o range vai de 3, valor mais pequeno possível, ao arredondamento da raíz quadrada de i (valor atual). Aqui verificamos se
+a divisão de i por j é 0. Se for, o número não é primo.
+
+Neste exercícios, começamos por assumir que todos os números são primos. A pouco e pouco vamos vendo que alguns não são. Por fim, se o número é mesmo primo
+o somatório é incrementado.
+
+Solução: 142913828922"""
