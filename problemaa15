@@ -1,0 +1,16 @@
+40 é o numero maximo de movimentos que podemos fazer para a direita e para baixo.
+20 é o número de movimentos para a direita que temos de fazer
+
+import math
+
+def problema15():
+
+    print ("Insira o número de linhas e colunas da matriz quadrada")
+
+    b=(int(input()))                      # movimentos a fazer para a direita
+
+    a = b*2                               # movimentos possíveis
+
+    print (int(math.factorial(a) / math.factorial(b) / math.factorial(a-b)))
+
+    print ("Caminhos Possíveis")
