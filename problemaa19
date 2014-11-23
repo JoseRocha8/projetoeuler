@@ -1,0 +1,23 @@
+import datetime
+
+def problema19()
+
+    sundays = 0
+    for year in range(1901, 2001):
+        for month in range(1, 13):
+            d = datetime.date(year, month, 1)
+            if d.weekday() == 6:
+                sundays = sundays + 1
+
+    print (sundays)
+
+
+"""Solução: 174
+
+Começamos por correr um ciclo for para encontrar o Ano e, dentro desse ciclo, para cada ano, corremos um outro ciclo para encontrar o mês.
+O range dos anos possíveis vai de 1901 a 2001 e, para os meses, de 1 a 13.
+
+Depois de corrermos todos os meses de todos os anos igualamos a variável d a todos os meses de todos os anos que tê um dia 1.
+Com a condicional "if" verificamos quais desses dias 1 são a um domingo.
+
+Aí o contador sundays é incrementado para cada dia 1 a um Domingo encontrado. Simples."""
