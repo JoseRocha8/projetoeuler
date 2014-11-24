@@ -1,0 +1,18 @@
+def fact(n):
+
+  if n == 1:
+    return 1
+
+  else:
+    return n * fact(n - 1)
+
+def problema20():
+
+  print (sum(map(int, str(fact(100)))))
+
+
+"""Começamos com uma função genérica que calcula valores fatoriais.
+
+A função que nos responde ao problema é a função "problema20" que devolve o somatório dos dígitos do fatorial de 100.
+
+Solução: 648"""
