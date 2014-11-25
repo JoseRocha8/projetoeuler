@@ -1,0 +1,35 @@
+def problema21(n):      #encontra divisores
+
+    somatorio = 0
+    
+    for i in range(1,n):
+        if n%i == 0:
+            somatorio += i
+
+    return somatorio
+ 
+total = 0
+
+for i in range(1, 10000):
+
+    x = problema21(i)   #somatorio divisores
+    y = problema21(x)   #somatorio divisores com o x encontrado
+
+    if i == y and i != x:   #If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair
+        total += i
+
+print (total)
+
+
+"""Começamos com uma função para encontrar os divisores de um determinado n. Esta função será utilizada no futuro.
+
+Na resolução do problema propriamente dita começamos por colocar o total, a nossa contagem, a zero.
+Com um ciclo for vamos correr todos os valores de 1 a 10000. Para cada i são encontrados os seus divisores e a esse somatorio chamaremos x.
+Depois vamos procurar o somatorio dos divisores de x e a esse somatorio chamaremos y.
+
+Para termos um amicable par d(i)=x e d(x)=y onde x!=i e é exatamente a isso que o condicional os obriga. Se esse requisito é cumprido, temos um
+amicable par e o total é incrementado para, no final, concluído o range, esse valor ser impresso.
+
+Solução: 31626"""
+
+
