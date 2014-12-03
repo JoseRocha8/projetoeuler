@@ -1,0 +1,30 @@
+from Euler import d    # d(n) retorna somatório dos divisores de n
+
+
+def problema23():
+
+ 
+    maximo = 28123
+    soma = 0
+    lista = set ()
+
+    for n in range(1, maximo):
+        if d(n) > n:    #abundante
+            lista.add(n)
+        if not any( (n-a in lista) for a in lista):
+            soma += n
+ 
+    print (soma)
+
+
+"""Na resolução deste problema vamos usar um módulo de apoio. Isto porque na base deste problema estão os divisores do vários números que vamos percorrer no range
+e no módulo em causa existe uma função que nos ajuda nesse aspeto.
+
+O range começa em 1 e vai até 28123.
+
+Começando o ciclo for, quando encontramos, para um n, um d(n) que lhe seja superior, esse n é adicionado à nossa lista (que no início se encontra vazia).
+Se o somatório for maior que o número, temos um número abundante.
+
+Com a condição if not ficamos a saber quais são os números abundantes com os quais não podemos, através da soma, obter um número inteiro.
+
+Solução: 4179871"""
