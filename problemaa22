@@ -1,0 +1,25 @@
+def problema22(str):
+    x=0
+    for t in str:
+        x+=ord(t)-64
+    return x
+
+
+f=open("C:\\names.txt")
+x=f.read()
+x=x.replace('"','').split(",")
+x.sort()
+sum=0
+for n in range(0,len(x)):
+    sum+=(n+1)*problema22(x[n])
+print (sum)
+
+
+"""Neste problema começamos por pecorrer cada letra da nossa lista de nomes. Utilizando a função 'ORD' atribuímos uma pontução a cada letra. Subtraimos 64 por causa da tabela unicode.
+Como tal, 'X' será a pontução de cada letra.
+
+Com a função replace podemos retirar todos os " " e as palavras serão substituídas por vírgulas (método split).
+
+No segundo ciclo for determinamos o somatório total, que vai sendo sempre incrementado até chegarmos ao final da nossa lista.
+
+Solução: 871198282"""
