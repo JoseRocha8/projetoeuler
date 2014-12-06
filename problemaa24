@@ -1,0 +1,12 @@
+from itertools import permutations
+
+def problema24():
+
+    print (''.join(str(x) for x in list(permutations('0123456789'))[999999]))
+
+
+'''Através da função permutations do módulo itertools obtemos todas as permutações possíveis com os algarismos de 0 a 9.
+
+Todos esses elementos são armazenados numa lista e queremos o 1000000 valor. Escolhemos o 999999º valor porque o valor dado já é uma permutação dele próprio.
+
+Solução: 2783915460'''
