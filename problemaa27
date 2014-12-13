@@ -1,4 +1,4 @@
-def is_prime(n):
+def primo(n):
     if n<2: return False
     if n==2: return True
     if n%2==0: return False
@@ -6,16 +6,17 @@ def is_prime(n):
         if n%m == 0: return False
     return True
 
-def try_quad(a, b):
+def p27(a, b):
     n = 0
     while 1:
-        if not is_prime(n**2 + a*n + b): break
+        if not primo(n**2 + a*n + b): 
+            break
         n += 1
     return n
 
-primes_below_1000 = [n for n in xrange(2,1000) if is_prime(n)]
+primes_menores_1000 = [n for n in xrange(2,1000) if primo(n)]
 
-count, a, b = max((try_quad(a,b), a, b) 
+count, a, b = max((p27(a,b), a, b) 
                       for a in xrange(-1000,1000) 
-                      for b in primes_below_1000)
+                      for b in primes_menores_1000)
 print a*b
