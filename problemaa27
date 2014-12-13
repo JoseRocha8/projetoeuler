@@ -1,0 +1,21 @@
+def is_prime(n):
+    if n<2: return False
+    if n==2: return True
+    if n%2==0: return False
+    for m in xrange(3, int(n**0.5)+1, 2):
+        if n%m == 0: return False
+    return True
+
+def try_quad(a, b):
+    n = 0
+    while 1:
+        if not is_prime(n**2 + a*n + b): break
+        n += 1
+    return n
+
+primes_below_1000 = [n for n in xrange(2,1000) if is_prime(n)]
+
+count, a, b = max((try_quad(a,b), a, b) 
+                      for a in xrange(-1000,1000) 
+                      for b in primes_below_1000)
+print a*b
