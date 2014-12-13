@@ -1,0 +1,25 @@
+def gera_seq(n):
+	contador=0
+	while n!=1:
+		if n % 2==0 and n != 0:
+			n=n/2
+			contador=contador + 1
+		elif n % 2 !=0 :
+			n=3*n+1
+			contador=contador+1
+	return contador
+
+#main
+
+n=20
+maior=0
+while n!=1000000:
+	num=n
+	seq=gera_seq(n)
+	if seq>maior:
+		maior=seq
+		num_maior=num
+	n=n+1
+
+print 'Numero: ',num_maior
+print 'Tamanho da sequencia',maior
