@@ -1,0 +1,7 @@
+def problema29():
+
+    print(len(set(a**b for a in range(2, 101) for b in range(2, 101))))
+
+#class set([iterable])
+#Return a new set object, optionally with elements taken from iterable.
+#set is a built-in class. See set and Set Types — set, frozenset for documentation about this class.
